@@ -15,25 +15,14 @@ var w = (function () {
 
             $.get('/clima/' + city, function (data) {
                 console.log(data);
-                console.log("###############################################################");
                 o = JSON.parse(data);
-                console.log(o.sys.country);
-                // Obtener la referencia del elemento body
+                //console.log(o.weather[0].main);
                 var body = document.getElementsByTagName("body")[0];
-
-                // Crea un elemento <table> y un elemento <tbody>
                 var tabla = document.createElement("table");
                 var tblBody = document.createElement("tbody");
-
-                // Crea las celdas
                 for (var i = 0; i < 2; i++) {
-                    // Crea las hileras de la tabla
                     var hilera = document.createElement("tr");
-
                     for (var j = 0; j < 5; j++) {
-                        // Crea un elemento <td> y un nodo de texto, haz que el nodo de
-                        // texto sea el contenido de <td>, ubica el elemento <td> al final
-                        // de la hilera de la tabla
                         if (i == 0) {
                             switch (j) {
                                 case 0:
@@ -96,7 +85,7 @@ var w = (function () {
                                     break;
                                 default:
                                     var celda = document.createElement("td");
-                                    var textoCelda = document.createTextNode(o.weather);
+                                    var textoCelda = document.createTextNode(o.weather[0].main);
                                     celda.appendChild(textoCelda);
                                     hilera.appendChild(celda);
                                     break
@@ -105,16 +94,10 @@ var w = (function () {
 
 
                     }
-
-                    // agrega la hilera al final de la tabla (al final del elemento tblbody)
                     tblBody.appendChild(hilera);
                 }
-
-                // posiciona el <tbody> debajo del elemento <table>
                 tabla.appendChild(tblBody);
-                // appends <table> into <body>
                 body.appendChild(tabla);
-                // modifica el atributo "border" de la tabla y lo fija a "2";
                 tabla.setAttribute("border", "2");
             });
         }
