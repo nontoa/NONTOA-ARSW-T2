@@ -18,11 +18,12 @@ var w = (function () {
                 o = JSON.parse(data);
                 //console.log(o.weather[0].main);
                 var body = document.getElementsByTagName("body")[0];
+                var center = document.createElement("center");
                 var tabla = document.createElement("table");
                 var tblBody = document.createElement("tbody");
                 for (var i = 0; i < 2; i++) {
                     var hilera = document.createElement("tr");
-                    for (var j = 0; j < 5; j++) {
+                    for (var j = 0; j < 6; j++) {
                         if (i == 0) {
                             switch (j) {
                                 case 0:
@@ -49,9 +50,15 @@ var w = (function () {
                                     celda.appendChild(textoCelda);
                                     hilera.appendChild(celda);
                                     break;
+                                case 4:
+                                    var celda = document.createElement("td");
+                                    var textoCelda = document.createTextNode("Main");
+                                    celda.appendChild(textoCelda);
+                                    hilera.appendChild(celda);
+                                    break;
                                 default:
                                     var celda = document.createElement("td");
-                                    var textoCelda = document.createTextNode("Other information");
+                                    var textoCelda = document.createTextNode("Description");
                                     celda.appendChild(textoCelda);
                                     hilera.appendChild(celda);
                                     break;
@@ -83,9 +90,15 @@ var w = (function () {
                                     celda.appendChild(textoCelda);
                                     hilera.appendChild(celda);
                                     break;
-                                default:
+                                case 4:
                                     var celda = document.createElement("td");
                                     var textoCelda = document.createTextNode(o.weather[0].main);
+                                    celda.appendChild(textoCelda);
+                                    hilera.appendChild(celda);
+                                    break;
+                                default:
+                                    var celda = document.createElement("td");
+                                    var textoCelda = document.createTextNode(o.weather[0].description);
                                     celda.appendChild(textoCelda);
                                     hilera.appendChild(celda);
                                     break
@@ -97,7 +110,8 @@ var w = (function () {
                     tblBody.appendChild(hilera);
                 }
                 tabla.appendChild(tblBody);
-                body.appendChild(tabla);
+                center.appendChild(tabla);
+                body.appendChild(center);
                 tabla.setAttribute("border", "2");
             });
         }

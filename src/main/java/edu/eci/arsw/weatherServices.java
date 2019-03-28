@@ -5,11 +5,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.HashMap;
 
+/**
+ * 
+ * @author 2137516
+ */
 @Service
 public class weatherServices {
 
     public static HashMap<String, String> cities;
 
+    /**
+     * 
+     * @param name
+     * @return
+     * @throws IOException 
+     */
     public String getWeather(String name) throws IOException {
         /*if (cities.get(name) == null) {
             String consulta;

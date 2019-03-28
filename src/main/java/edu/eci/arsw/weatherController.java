@@ -11,6 +11,10 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.UUID;
 
+/**
+ * 
+ * @author 2137516
+ */
 @RestController
 @RequestMapping
 public class weatherController {
@@ -18,6 +22,11 @@ public class weatherController {
     @Autowired
     weatherServices servicios;
 
+    /**
+     * 
+     * @param name
+     * @return 
+     */
     @ResponseBody
     @GetMapping(value="/clima/{name}")
     public ResponseEntity<?> getCity(@PathVariable("name") String name) {

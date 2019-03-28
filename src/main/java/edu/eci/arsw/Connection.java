@@ -7,7 +7,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import org.springframework.stereotype.Service;
-
+/**
+ * 
+ * @author 2137516
+ */
 @Service
 public class Connection {
 
@@ -15,7 +18,12 @@ public class Connection {
     private static  String city;
     private  static String openWeatherMapKey = "c5d0d45f9dc4e3bf488c0316e2ca2364";
     private static  String GET_URL = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID=c5d0d45f9dc4e3bf488c0316e2ca2364";
-
+    
+    /**
+     * 
+     * @return
+     * @throws IOException 
+     */
     public static String connection() throws IOException {     
         
 
@@ -41,6 +49,10 @@ public class Connection {
         return null;
     }
 
+    /**
+     * 
+     * @param c 
+     */
     public static void setCity(String c){
         GET_URL="http://api.openweathermap.org/data/2.5/weather?q="+c+"&APPID=df74c112a5dfd8ba80bb24b45eb5a4be";
 
