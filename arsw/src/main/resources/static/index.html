@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+        <title>Weather search</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="weather.js"></script>
+        <link rel="stylesheet"
+              href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+
+
+
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                text-align: center;
+            }
+        </style>
+
+    </head>
+    <body>
+    <center>
+        <h1>Weather search parcial</h1>
+        <hr />
+        <div class="topnav" style>
+            <input id="nameCity" type="text" placeholder="City..">
+            <input type="submit" id='search' onclick="m.mostrar()">
+        </div>
+        <div id="llenar">
+
+        </div>
+    </center>    
+
+</body>
+
+
+</html>
