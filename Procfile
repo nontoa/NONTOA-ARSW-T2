@@ -1,1 +1,1 @@
-web: java -jar target/heroku-lab-1.0.jar
+web: java -jar target/arsw-1.0.jar
